@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button [matMenuTriggerFor]="rootMenu" (click)="drawer.toggle()">
+      <i class="material-icons">menu </i>
+    </button>
+    <mat-menu #rootMenu="matMenu"> </mat-menu>
+    <span class="example-spacer"></span>
+    <button mat-icon-button>
+      <mat-icon class="material-icons" mat-raised-button>notifications</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon class="material-icons" mat-raised-button routerLink="/register">person_add</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon class="material-icons" mat-raised-button (click)="openLoginDialog()">touch_app</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]=false>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <div class="my-list-icons">
+        <a mat-list-item routerLink="/utilization">
+          <mat-icon class="material-icons">trending_up</mat-icon> Utilization Tracker
+        </a>
+        <a mat-list-item routerLink="/reports">
+          <mat-icon class="material-icons">dashboard</mat-icon>Dashboard
+        </a>
+        <a mat-list-item  routerLink="/schedule">
+          <mat-icon class="material-icons">schedule</mat-icon>Schedule
+        </a>
+        <!-- <a mat-list-item>
+          <mat-icon class="material-icons">web</mat-icon>Dashboard
+        </a> -->
+      </div>
+      </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <div class="my-list-icons">
+        <a mat-list-item routerLink="/dashboard">
+          <mat-icon class="material-icons">assignment</mat-icon> Employee List
+        </a>
+        <a mat-list-item routerLink="/task">
+          <mat-icon class="material-icons">list_alt</mat-icon>Tasks
+        </a>
+        <a mat-list-item routerLink="/register">
+          <mat-icon class="material-icons">person_add</mat-icon>Add Employee
+        </a>
+      </div>  
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

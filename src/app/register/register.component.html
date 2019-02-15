@@ -1,0 +1,131 @@
+<mat-card class="formCard">
+
+  <mat-card-header>
+    <!-- <div mat-card-avatar><i class="material-icons">face</i></div> -->
+    <mat-card-title>Enroll Employee</mat-card-title>
+  </mat-card-header>
+
+  <!-- <mat-divider></mat-divider> -->
+
+  <mat-card-content>
+    <div class="form-container">
+
+      <form [formGroup]="regForm" autocomplete="off" novalidate (ngSubmit)="createEmployee()">
+        <div class="container">
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>First Name</mat-label>
+              <input matInput type="text" formControlName="firstName" id="firstName">
+              <mat-error *ngIf="hasError('firstName', 'required')">First Name is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>Last Name</mat-label>
+              <input matInput type="text" formControlName="lastName" id="lastName">
+              <mat-error *ngIf="hasError('lastName', 'required')">Last Name is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>Employee ID</mat-label>
+              <input matInput formControlName="eid" id="eid">
+              <mat-error *ngIf="hasError('eid', 'required')">Employee ID is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" id="email">
+              <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+              <mat-error *ngIf="hasError('email', 'email')">Invalid Email</mat-error>
+            </mat-form-field>
+          </div>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" id="address">
+            <mat-error *ngIf="hasError('address', 'required')">Address is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Assigned Project</mat-label>
+            <input matInput formControlName="project" id="project">
+            <mat-error *ngIf="hasError('project', 'required')">Assigned project name is required</mat-error>
+            <mat-error *ngIf="hasError('project', 'project')">Invalid project name</mat-error>
+          </mat-form-field>
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>Position Title</mat-label>
+              <input matInput formControlName="position" id="position">
+              <mat-error *ngIf="hasError('position', 'required')">Position Title is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>Broadband</mat-label>
+              <mat-select placeholder="Select career step" formControlName="broadband" id="broadband">
+                <mat-option *ngFor="let bb of bbDetails" [value]="bb.value">
+                  {{bb.viewValue}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="hasError('broadband', 'required')">Broadband is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>Career Step</mat-label>
+              <mat-select placeholder="Select career step" formControlName="careerStep" id="careerStep">
+                <mat-option *ngFor="let careerStep of empDetails" [value]="careerStep.value">
+                  {{careerStep.viewValue}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="hasError('careerStep', 'required')">Career Step is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>Department / Capability</mat-label>
+              <mat-select placeholder="Select Department" formControlName="capability" id="capability">
+                <mat-option *ngFor="let capability of dptDetails" [value]="capability.value">
+                  {{capability.viewValue}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="hasError('capability', 'required')">Department / Capability is required</mat-error>
+            </mat-form-field>
+          </div>
+          <mat-form-field>
+            <mat-label>Skills</mat-label>
+            <mat-select placeholder="Select Skill Set" formControlName="skill" multiple id="skill">
+              <mat-option *ngFor="let skill of skillDetails" [value]="skill.value">
+                {{skill.viewValue}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="hasError('skill', 'required')">Skill set is required</mat-error>
+          </mat-form-field>
+
+          <!-- <mat-divider></mat-divider> -->
+          <!-- <h4>Account </h4>
+          <div class="col-2">
+            <mat-form-field>
+              <mat-label>Username</mat-label>
+              <input matInput formControlName="username" id="username">
+              <mat-error *ngIf="hasError('username', 'required')">Username is required</mat-error>
+            </mat-form-field>
+          </div> -->
+          <!-- <div class="col-2">
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" id="password" type="password">
+              <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+            </mat-form-field>
+          </div> -->
+        </div>
+        <mat-card-actions align="center">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!regForm.valid">Submit</button>
+          <button mat-raised-button (click)="onCancel()">Cancel</button>
+        </mat-card-actions>
+      </form>
+    </div>
+  </mat-card-content>
+
+
+
+</mat-card>

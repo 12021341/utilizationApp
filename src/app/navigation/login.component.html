@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Login</h1>
+
+<div mat-dialog-content>
+    <form class="formContainer">
+        <mat-form-field class="form-adjust" appearance="outline" style="margin-right: 10px;">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Enter your username">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter your password" type="password">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <div class="my-button-row">
+        <button mat-flat-button color="primary" cdkFocusInitial type="submit">Submit</button>
+        <button mat-flat-button color="warn" (click)="onNoClick()">Cancel</button>
+    </div>
+</div>

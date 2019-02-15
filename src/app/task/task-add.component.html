@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>New Project</h1>
+<div class="container">
+    <div mat-dialog-content>
+        <form [formGroup]="taskForm" autocomplete="off" novalidate (ngSubmit)="createForm()">
+            <mat-form-field class="form-adjust myInput" style="margin-right: 10px;">
+                <mat-label>Project Name</mat-label>
+                <input matInput placeholder="Enter Task Name" id="projectName" formControlName="projectName">
+            </mat-form-field>
+            <div class="col-2">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Start Date</mat-label>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" id="startDate" formControlName="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Plan End Date</mat-label>
+                    <input matInput [matDatepicker]="picker1" placeholder="Choose a date" id="endDate" formControlName="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Status</mat-label>
+                    <input matInput placeholder="Enter your job status" type="status" id="status" formControlName="status">
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+                <mat-form-field>
+                    <mat-label>Priority</mat-label>
+                    <mat-select placeholder="Select career step" id="priority" formControlName="priority">
+                        <mat-option *ngFor="let priority of priorities" [value]="priority.value">
+                            {{priority.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+                <mat-form-field>
+                    <mat-label>Resource count</mat-label>
+                    <input matInput placeholder="Enter resource count" id="resourceCount" formControlName="resourceCount">
+                </mat-form-field>
+            </div>
+            <mat-form-field>
+                <mat-label>Skills Required</mat-label>
+                <mat-select placeholder="Select Skill Set" formControlName="skill" multiple id="skill">
+                    <mat-option *ngFor="let skill of skillDetails" [value]="skill.value">
+                        {{skill.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Project Description</mat-label>
+                <textarea matInput placeholder="Leave a description"></textarea>
+            </mat-form-field>
+        </form>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <div class="my-button-row">
+        <button mat-flat-button class="btnActions" color="primary" cdkFocusInitial type="submit">Submit</button>
+        <button mat-flat-button class="btnActions" color="warn" (click)="onNoClick()">Cancel</button>
+    </div>
+</div>

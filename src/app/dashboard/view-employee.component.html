@@ -1,0 +1,152 @@
+<div class="container">
+    <mat-card class="example-card">
+
+        <mat-card-header>
+            <button mat-raised-button color="primary" class="customBtn" (click)='onClick()'>UPDATE PROFILE</button>
+            <mat-card-title>
+                <h4>Basic Information</h4>
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+
+            <form [formGroup]="employeeForm" autocomplete="off" novalidate>
+                <div class="content-container">
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Employee ID" value="81016081" id="eid" formControlName="eid">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="First Name" value="Juan" formControlName="firstName" id="firstName">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Last Name" formControlName="lastName" id="lastName" value="Dela Cruz">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-1">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Complete Address" formControlName="address" id="address" value="#12 Ortigas Ave. Pasig City">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Email" formControlName="email" id="email" value="juandelacruz@pccw.com">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Mobile Number" formControlName="mobileNumber" id="mobileNumber"
+                                value="+63916897524">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <mat-card-header>
+                    <mat-card-title>
+                        <h4>Company Information</h4>
+                    </mat-card-title>
+                </mat-card-header>
+
+                <div class="content-container">
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Employee Status</mat-label>
+                            <input matInput placeholder="Employee Status" formControlName="status" id="status" value="active">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Project" formControlName="project" id="project" value="SPTEL">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Broadband" formControlName="broadband" id="broadband" value="1">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Career Step" formControlName="careerStep" id="careerStep"
+                                value="IO5">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Position Title" formControlName="position" id="position" value="IO5">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Department / Capability" formControlName="capability" id="capability"
+                                value="AD-CMT">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Date hired" formControlName="dateHired" id="dateHired" value="01/01/2019">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Vacation Leaves Left</mat-label>
+                            <input matInput placeholder="Vacation Leaves" formControlName="vLeaves" id="vLeaves" value="6">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Sick Leaves Left</mat-label>
+                            <input matInput placeholder="Vacation Leaves" formControlName="sLeaves" id="sLeaves" value="6">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <mat-card-header>
+                    <mat-card-title>
+                        <h4>Technical Information</h4>
+                    </mat-card-title>
+                </mat-card-header>
+
+                <div class="content-container">
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Skills</mat-label>
+                            <input matInput placeholder="Employee Status" formControlName="skills" id="skills" value="Java - 5years">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-3">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Total Technical Experience</mat-label>
+                            <input matInput placeholder="Total Technical Experience" formControlName="tExperience" id="tExperience" value="7">
+                        </mat-form-field>
+                    </div>
+
+                </div>
+            </form>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <!-- <button mat-button>EDIT</button> -->
+            <!-- <button mat-button>DELETE</button> -->
+        </mat-card-actions>
+    </mat-card>
+</div>
